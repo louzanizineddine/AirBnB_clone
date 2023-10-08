@@ -5,12 +5,28 @@ from datetime import datetime
 
 
 
+
 class BaseModel:
 
-    def __init__(self):
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+    def __init__(self, *args, **kwargs):
+
+        if kwargs.__len__() != 0:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            else:
+                self.id = str(uuid.uuid4())
+            if 'created_at' in kwargs:
+                self.created_at = datetime.strptime(kwargs['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
+            else:
+                self.created_at = datetime.now()
+            if 'updated_at' in kwargs:
+                self.updated_at = datetime.strptime(kwargs['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
+            else:
+                self.updated_at = datetime.now()
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
 
     
@@ -29,10 +45,3 @@ class BaseModel:
         dic['created_at'] = datetime.isoformat(self.created_at)
         dic['updated_at'] = datetime.isoformat(self.updated_at)
         return self.__dict__
-    
-
-b = BaseModel()
-
-print(b.id, b.created_at, b.updated_at)
-
-print(b.to_dict())
