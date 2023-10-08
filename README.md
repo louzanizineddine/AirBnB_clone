@@ -76,5 +76,5 @@ You need to install this software
 ```
 
 ## Authors
-* Ibukun Akintola
-* Asuwe Richard Wuese
+* LOUZANI Zineddine
+* Fatima Zohra
