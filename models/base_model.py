@@ -37,13 +37,13 @@ class BaseModel:
 
     def save(self):
         self.updated_at = datetime.now()
-        storage.save(self)
+        storage.save()
 
     
     def to_dict(self):
-        dic = self.__dict__
+        dic = self.__dict__.copy()
 
         dic['__class__'] = self.__class__.__name__
-        dic['created_at'] = datetime.isoformat(self.created_at)
-        dic['updated_at'] = datetime.isoformat(self.updated_at)
-        return self.__dict__
+        dic['created_at'] = dic['created_at'].isoformat();
+        dic['updated_at'] = dic['updated_at'].isoformat();
+        return dic

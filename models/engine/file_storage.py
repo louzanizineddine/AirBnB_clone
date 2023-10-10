@@ -17,10 +17,18 @@ class FileStorage:
         FileStorage.__objects[key] = obj
 
     def save(self):
-        #serializes __objects to the JSON file (path: __file_path)
+        serialized_objects = {}
+
+        # Iterate through the objects in FileStorage.__objects
+        for key, obj in FileStorage.__objects.items():
+            # Serialize each object using its "to_dict" method and store it in the dictionary
+            serialized_objects[key] = obj.to_dict()
+
+        # Open the JSON file for writing
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
-            dic = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
-            json.dump(dic, f)
+            # Write the serialized objects to the file
+            json.dump(serialized_objects, f)
+
 
     def reload(self):
         #  deserializes the JSON file to __objects (only if the JSON file (__file_path) exists ;
@@ -28,7 +36,15 @@ class FileStorage:
 
         if os.path.isfile(FileStorage.__file_path) is False:
             pass
-
         else:
-            with open(FileStorage.__filepath, "r", encoding="utf-8") as f:
-                FileStorage.__object = json.load(FileStorage.__file_path)
+            with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
+                obj_dict = {}
+                for k, v in obj_dict.items():
+                    class_name = v["__class__"]
+                    print(class_name)
+                    class_constructor = self.classes()[class_name]
+                    print(class_constructor)
+                    reconstructed_object = class_constructor(**v)
+                    print(reconstructed_object)
+                    obj_dict[k] = reconstructed_object
+                FileStorage.__objects = obj_dict
