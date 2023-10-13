@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import re
 import cmd
 from models import storage
 from models.base_model import BaseModel
@@ -22,15 +23,29 @@ class HBNBCommand(cmd.Cmd):
         "Amenity",
         "Review"
     }
-
+    
     def default(self, line: str):
-        if (line == "User.all()"):
-            self.do_all("User")
         
-        if (line == "User.count"):
-            print()
+        if not '.' in line:
+            print("*** Unknown syntax: {}".format(line))
+            return False
+        
+        args = line.split(".")
+        class_name = args[0]
+        func = args[1]
+        match = re.search(r'"([^"]*)"', args[1])
+        if match:
+            id = match.group(1)
+            line = f"{class_name} {id}"
+        if (func == "all()"):
+            self.do_all(class_name)
+        elif (func == "count()"):
+            self.do_count(class_name)
+        elif "show" in func:
+            self.do_show(line)
+        elif "destroy" in func:
+            self.do_destroy(line)
 
-        if (line in __classes)
 
     def do_EOF(self, line):
         """EOF signal to exit the program."""
@@ -132,6 +147,21 @@ class HBNBCommand(cmd.Cmd):
                     print("** value missing **")
             else:
                 print("** no instance found **")
+
+    def do_count(self, line):
+        args = line.split()
+        if args is None or len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+        else:
+            count = 0
+            for obj in storage.all().values():
+                if args[0] == obj.__class__.__name__:
+                    count += 1
+            print (count)
+
+
 
 
 
