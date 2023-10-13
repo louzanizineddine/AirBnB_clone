@@ -74,6 +74,7 @@ class FileStorage:
                             obj_dict[k] = BaseModel(**v)
 
                         case 'Place':
+                            obj_dict[k] = Place(**v)
                             if "name" in v:
                                 obj_dict[k].name = v["name"]
                             if "city_id" in v:

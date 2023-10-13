@@ -23,6 +23,15 @@ class HBNBCommand(cmd.Cmd):
         "Review"
     }
 
+    def default(self, line: str):
+        if (line == "User.all()"):
+            self.do_all("User")
+        
+        if (line == "User.count"):
+            print()
+
+        if (line in __classes)
+
     def do_EOF(self, line):
         """EOF signal to exit the program."""
         print()
