@@ -2,20 +2,20 @@
 """ Unit tests for review.py file"""
 
 
-# import unittest
-# from models.base_model import BaseModel
-# import os
-# from models import storage
-# from models.engine.file_storage import FileStorage
-# from models.review import Review
-# import pycodestyle
+import unittest
+from models.base_model import BaseModel
+import os
+from models import storage
+from models.engine.file_storage import FileStorage
+from models.review import Review
+import pycodestyle
 
-# class TestReview(unittest.TestCase):
-#     """ Unit tests for review.py file"""
+class TestReview(unittest.TestCase):
+    """ Unit tests for review.py file"""
         
-#     def setUp(self):
-#         """Sets up test methods."""
-#         pass
+    def setUp(self):
+        """Sets up test methods."""
+        pass
 
 #     def tearDown(self):
 #         """Tears down test methods."""
@@ -101,5 +101,5 @@
 #         boolVal = len(Review.to_dict.__doc__) > 1
 #         self.assertTrue(boolVal)
 
-# if __name__ == "__main__":
-#     unittest.main()
+if __name__ == "__main__":
+    unittest.main()

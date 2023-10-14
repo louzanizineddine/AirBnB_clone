@@ -1,20 +1,20 @@
 #!/usr/bin/python3
 """ Unit tests for place.py file"""
 
-# import unittest
-# from models.base_model import BaseModel
-# import os
-# from models import storage
-# from models.engine.file_storage import FileStorage
-# from models.place import Place
-# import pycodestyle
+import unittest
+from models.base_model import BaseModel
+import os
+from models import storage
+from models.engine.file_storage import FileStorage
+from models.place import Place
+import pycodestyle
 
-# class TestPlace(unittest.TestCase):
-#     """ Unit tests for place.py file"""
+class TestPlace(unittest.TestCase):
+    """ Unit tests for place.py file"""
     
-    # def setUp(self):
-    #     """Sets up test methods."""
-    #     pass
+    def setUp(self):
+        """Sets up test methods."""
+        pass
 
 #     def tearDown(self):
 #         """Tears down test methods."""
@@ -101,5 +101,5 @@
 #         self.assertTrue(boolVal)
 
 
-# if __name__ == "__main__":
-#     unittest.main()
+if __name__ == "__main__":
+    unittest.main()

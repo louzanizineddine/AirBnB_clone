@@ -1,16 +1,20 @@
 #!/usr/bin/python3
 """ Unit tests for city.py file"""
 
-# import unittest
-# import os
-# from models import storage
-# from models.engine.file_storage import FileStorage
-# from models.base_model import BaseModel
-# from models.city import City
+import unittest
+import os
+from models import storage
+from models.engine.file_storage import FileStorage
+from models.base_model import BaseModel
+from models.city import City
 
 
-# class TestCity(unittest.TestCase):
-#     """ Unit tests for city.py file"""
+class TestCity(unittest.TestCase):
+    """ Unit tests for city.py file"""
+
+    def setUp(self):
+        """Sets up test methods."""
+        pass
 
     # def resetStorage(self):
     #     """Resets FileStorage data."""
@@ -31,5 +35,5 @@
     #     self.assertIsInstance(c, City)
     #     self.assertTrue(issubclass(type(c), BaseModel))
 
-# if __name__ == "__main__":
-#     unittest.main()
+if __name__ == "__main__":
+    unittest.main()

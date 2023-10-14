@@ -2,21 +2,21 @@
 """ Unit tests for user.py file"""
 
 
-# import unittest
-# from models.base_model import BaseModel
-# import os
-# from models import storage
-# from models.engine.file_storage import FileStorage
-# from models.user import User
-# import pycodestyle
+import unittest
+from models.base_model import BaseModel
+import os
+from models import storage
+from models.engine.file_storage import FileStorage
+from models.user import User
+import pycodestyle
 
 
-# class TestUser(unittest.TestCase):
-#     """ Unit tests for user.py file"""
+class TestUser(unittest.TestCase):
+    """ Unit tests for user.py file"""
 
-    # def setUp(self):
-    #     """Sets up test methods."""
-    #     pass
+    def setUp(self):
+        """Sets up test methods."""
+        pass
 
 #     def tearDown(self):
 #         """Tears down test methods."""
@@ -105,5 +105,5 @@
 #         self.assertTrue(boolVal)
 
 
-# if __name__ == "__main__":
-#     unittest.main()
+if __name__ == "__main__":
+    unittest.main()

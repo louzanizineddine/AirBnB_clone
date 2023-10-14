@@ -1,33 +1,33 @@
 #!/usr/bin/python3
-# """ Unit tests for file_storage.py file"""
+""" Unit tests for file_storage.py file"""
 
 
-# import os
-# import models
-# import unittest
-# from models import *
-# from models.engine.file_storage import FileStorage
-# from models.amenity import Amenity
-# from models.base_model import BaseModel
-# from models.user import User
-# from models.state import State
-# from models.review import Review
-# from models.place import Place
-# from models.city import City
+import os
+import models
+import unittest
+from models import *
+from models.engine.file_storage import FileStorage
+from models.amenity import Amenity
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.review import Review
+from models.place import Place
+from models.city import City
 
 
-# class TestFileStorage(unittest.TestCase):
-#     """test class for file storage"""
+class TestFileStorage(unittest.TestCase):
+    """test class for file storage"""
 
-#     # @classmethod
-#     # def setUpClass(mycls):
-#     #     """Function that intialize test parameters
-#     #     within unittests for testing only"""
-
-#     #     try:
-#     #         os.rename("file.json", "mytmp")
-#     #     except Exception:
-#     #         pass
+    @classmethod
+    def setUpClass(mycls):
+        """Function that intialize test parameters
+        within unittests for testing only"""
+        pass
+        # try:
+        #     os.rename("file.json", "mytmp")
+        # except Exception:
+        #     pass
 
 #     # @classmethod
 #     # def tearDownClass(mycls):
@@ -105,5 +105,5 @@
 #     #     self.assertTrue(isinstance(json_storage._FileStorage__objects, dict))
 
 
-# if __name__ == "__main__":
-#     unittest.main()
+if __name__ == "__main__":
+    unittest.main()

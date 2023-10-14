@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 """Unittest module for the BaseModel Class."""
 
-# import unittest
-# from datetime import datetime
-# from models.base_model import BaseModel
-# from models.engine.file_storage import FileStorage
-# import os
-# import pycodestyle
+import unittest
+from datetime import datetime
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
+import os
+import pycodestyle
 
 
-# class TestBaseModel(unittest.TestCase):
+class TestBaseModel(unittest.TestCase):
 
-#     """Test Cases for the BaseModel class."""
+    """Test Cases for the BaseModel class."""
 
-    # def setUp(self):
-    #     """Sets up test methods."""
-    #     pass
+    def setUp(self):
+        """Sets up test methods."""
+        pass
 
     # def tearDown(self):
     #     """Tears down test methods."""
@@ -143,5 +143,5 @@
 #         boolVal = len(BaseModel.to_dict.__doc__) > 1
 #         self.assertTrue(boolVal)
 
-# if __name__ == "__main__":
-#     unittest.main()
+if __name__ == "__main__":
+    unittest.main()
