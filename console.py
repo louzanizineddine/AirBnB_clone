@@ -33,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
     def default(self, line: str):
         """Default behavior for cmd module when input is invalid"""
 
-        if not in '.' line:
+        if '.' not in  line:
             print("*** Unknown syntax: {}".format(line))
             return False
 
