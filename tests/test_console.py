@@ -11,3 +11,6 @@ class TestHBNB(unittest.TestCase):
     def test_prompt_string(self):
         """test the basic prompting"""
         self.assertEqual("(hbnb) ", HBNBCommand.prompt)
+
+if __name__ == "__main__":
+    unittest.main()
