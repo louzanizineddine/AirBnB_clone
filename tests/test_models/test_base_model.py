@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Unittest module for the BaseModel Class."""
 
 import unittest
 from datetime import datetime
@@ -10,6 +11,8 @@ import uuid
 
 
 class TestBaseModel(unittest.TestCase):
+
+    """Test Cases for the BaseModel class."""
 
     def resetStorage(self):
         """Resets FileStorage data."""
