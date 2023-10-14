@@ -6,13 +6,21 @@ from datetime import datetime
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 import os
-import json
-import uuid
+
 
 
 class TestBaseModel(unittest.TestCase):
 
     """Test Cases for the BaseModel class."""
+
+    def setUp(self):
+        """Sets up test methods."""
+        pass
+
+    def tearDown(self):
+        """Tears down test methods."""
+        self.resetStorage()
+        pass
 
     def resetStorage(self):
         """Resets FileStorage data."""
