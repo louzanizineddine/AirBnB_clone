@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Defines the HBnB console."""
+"""
+Defines the HBnB console.
+"""
+
 import re
 import cmd
 from models import storage
