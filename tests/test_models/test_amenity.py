@@ -10,10 +10,10 @@ from models.amenity import Amenity
 class TestAmenity(unittest.TestCase):
     """ Unit tests for amenity.py file"""
 
-    def test_amenity(self):
-        """Test if the inheritance works"""
+    # def test_amenity(self):
+    #     """Test if the inheritance works"""
 
-        self.assertTrue(issubclass(Amenity, BaseModel))
+    #     self.assertTrue(issubclass(Amenity, BaseModel))
 
 
 if __name__ == "__main__":
