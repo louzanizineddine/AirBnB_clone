@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Defines the HBnB console."""
 import re
 import cmd
 from models import storage
@@ -11,7 +11,13 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 class HBNBCommand(cmd.Cmd):
+    """Defines the HolbertonBnB command interpreter.
+
+    Attributes:
+        prompt (str): The command prompt.
+    """
 
     prompt = '(hbnb) '
     __classes = {
@@ -23,13 +29,14 @@ class HBNBCommand(cmd.Cmd):
         "Amenity",
         "Review"
     }
-    
+
     def default(self, line: str):
-        
-        if not '.' in line:
+        """Default behavior for cmd module when input is invalid"""
+
+        if not in '.' line:
             print("*** Unknown syntax: {}".format(line))
             return False
-        
+
         args = line.split(".")
         class_name = args[0]
         func = args[1]
@@ -46,7 +53,6 @@ class HBNBCommand(cmd.Cmd):
         elif "destroy" in func:
             self.do_destroy(line)
 
-
     def do_EOF(self, line):
         """EOF signal to exit the program."""
         print()
@@ -57,9 +63,13 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
+        """Do nothing upon receiving an empty line."""
         pass
 
     def do_create(self, line):
+        """Usage: create <class>
+        Create a new class instance and print its id.
+        """
 
         args = line.split()
         if args is None or len(args) == 0:
@@ -72,8 +82,11 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
             print(instance.id)
 
-
     def do_show(self, line):
+        """Usage: show <class> <id> or <class>.show(<id>)
+        Display the string representation of a class instance of a given id.
+        """
+
         args = line.split()
         if args is None or len(args) == 0:
             print("** class name missing **")
@@ -90,6 +103,9 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_destroy(self, line):
+        """Usage: destroy <class> <id> or <class>.destroy(<id>)
+        Delete a class instance of a given id."""
+
         args = line.split()
         if args is None or len(args) == 0:
             print("** class name missing **")
@@ -101,12 +117,16 @@ class HBNBCommand(cmd.Cmd):
             key = f"{args[0]}.{args[1]}"
             instances = storage.all()
             if key in instances:
-                del(instances[key])
+                del (instances[key])
                 storage.save()
             else:
                 print("** no instance found **")
 
     def do_all(self, line):
+        """Usage: all or all <class> or <class>.all()
+        Display string representations of all instances of a given class.
+        If no class is specified, displays all instantiated objects."""
+
         args = line.split()
         if len(args) > 0 and args[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
@@ -121,6 +141,11 @@ class HBNBCommand(cmd.Cmd):
             print(lst_objects)
 
     def do_update(self, line):
+        """Usage: update <class> <id> <attribute_name> <attribute_value> or
+       <class>.update(<id>, <attribute_name>, <attribute_value>).
+       Update a class instance of a given id by adding or updating
+        a given attribute key/value pair"""
+
         args = line.split()
         if args is None or len(args) == 0:
             print("** class name missing **")
@@ -149,6 +174,9 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_count(self, line):
+        """Usage: count <class> or <class>.count()
+        Retrieve the number of instances of a given class."""
+
         args = line.split()
         if args is None or len(args) == 0:
             print("** class name missing **")
@@ -159,10 +187,7 @@ class HBNBCommand(cmd.Cmd):
             for obj in storage.all().values():
                 if args[0] == obj.__class__.__name__:
                     count += 1
-            print (count)
-
-
-
+            print(count)
 
 
 if __name__ == '__main__':
@@ -171,5 +196,3 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print()
         pass
-
-
