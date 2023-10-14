@@ -1,208 +1,80 @@
-SIMOHAMMED22# AirBnB clone - The console
+# AirBnB_clone - The Console
+![image](https://user-images.githubusercontent.com/106776383/203980085-11fbf721-1f19-4e74-a98c-7f635313c518.png)
 
-Welcome to the AirBnB Clone Console! This is the first step towards building the AirBnB clone project, a full web application that mimics some functionalities of the popular accommodation rental platform, Airbnb.
+[AirBnB Clone - The Console](https://alx-intranet.hbtn.io/concepts/74)
+
+For further information, click on the above link
+
+## Airbnb Clone - Structure
+![image](https://user-images.githubusercontent.com/106776383/203980933-3d854fbf-df95-42fc-bfde-de5d40828dfb.png)
+
+## UML - Airbnb Console
+![image](https://user-images.githubusercontent.com/106776383/203981127-0ae49d24-e736-40f7-a366-cfeb7b86c4db.png)
 
 ## Contents:
+* Project Description
+* General Objetives
+* Command Interpreter Description
+  - How to start it
+  - Commands and their usage
+  - How to use it
+  - examples
+* Unittests
 
-* [1 Introduction](#1-Introduction)
-* [2 Tools](#2-Tools)
-* [3 Installation](#3-Installation)
-* [4 Testing](#4-Testing)
-* [5 Usage](#5-Usage)
-* [6 Authors](#6-Authors)
+## Project Description
+Airbnb Clone is the main project of the second trimester at Holberton School. The aim is to develop an entire web application that simulates the behavior of the Airbnb platform. Starting from the console or command interpreter, to manipulate data without a visual interface, like in a Shell (perfect for development and debugging), followed by the construction of a website (the front-end) that shows the final product to everybody: static and dynamic, once it's finished what follows is the connection with the database or files that store data (data = objects). And last but not least, the creation of an API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them).
 
-# ``1-Introduction``
-Team project to build a clone of [AirBnB](https://www.airbnb.com/).
+## General Objetives
+* How to create a Python package
+* How to create a command interpreter in Python using the cmd module
+* What is Unit testing and how to implement it in a large project
+* How to serialize and deserialize a Class
+* How to write and read a JSON file
+* How to manage datetime
+* What is an UUID
+* What is *args and how to use it
+* What is **kwargs and how to use it
+* How to handle named arguments in a function
 
-## Overview
+## Command Interpreter Description
+* How to start it
+  - Follow the instructions to get a copy of the program and run in your local machine:
 
-The AirBnB Clone Console is a Python-based command-line interface (CLI) that allows you to manage AirBnB objects, such as users, states, cities, places, and more. With this console, you can perform various operations on these objects, including creating, retrieving, updating, and deleting them.
+    Clone the following repository.
+    `https://github.com/HibeeK/AirBnB_clone.git`
 
-The console will perform the following tasks:
+    Run the program
+    `./console.py`
 
-* create a new object
-* retrive an object from a file
-* do operations on objects
-* destroy an object
+* Commands and their usage
 
+| Command |	Usage |	Example | Description |
+| ------- | ----- | ------- | ----------- |
+| create | `create <class name>` | create BaseModel | Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id. |
+| show | `show <class name>` | <id>	show BaseModel 1234-1234-1234 |	Prints the string representation of an instance based on the class name and id. |
+| destroy |	`destroy <class name>` | <id>	destroy BaseModel 1234-1234-1234 |	Deletes an instance based on the class name and id (save the change into the JSON file). |
+| all |	`all <class name> or all` |	all BaseModel |	Prints all string representation of all instances based or not on the class name. |
+| update |	`update <class name> <id> <attribute name> "<attribute value>"` |	update BaseModel 1234-1234-1234 email "airbnb@holbertonschool.com" |	Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). |
+| all() |	`<class name>.all()` |	User.all() |	Retrieve all instances of a class |
+| count() |	`<class name>.count()` |	User.count() | Retrieve the number of instances of a class |
+| show() |	`<class name>.show(<id>)` |	User.show("246c227a-d5c1-403d-9bc7-6a47bb9f0f68") |	etrieve an instance based on its ID |
+| destroy() |	`<class name>.destroy(<id>)` |	User.destroy("246c227a-d5c1-403d-9bc7-6a47bb9f0f68") |	Destroy an instance based on his ID |
+| update() |	`<class name>.update(<id>, <attribute name>, <attribute value>)` |	User.update("38f22813-2753-4d42-b37c-57a17f1e4f88", "age", 89) |	Update an instance based on his ID |
+| update() with dictionary |	`<class name>.update(<id>, <dictionary representation>)` |	User.update("38f22813-2753-4d42-b37c-57a17f1e4f88", {'first_name': "John", "age": 89}) |	Update an instance based on his ID with a dictionary |
 
+## Prerequisites
+For further installation is necessary to set this program on Ubuntu 14.04 LTS using Vagrant in VirtualBox.
 
-## ``2-Tools``
-<!-- ubuntu -->
-<a href="https://ubuntu.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=E95420&labelColor=2F333A" alt="Suite CRM"></a> <!-- bash --> <a href="https://www.gnu.org/software/bash/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GNU%20Bash&color=4EAA25&logo=GNU%20Bash&logoColor=4EAA25&labelColor=2F333A" alt="terminal"></a> <!-- python--> <a href="https://www.python.org" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Python&color=FFD43B&logo=python&logoColor=3776AB&labelColor=2F333A" alt="python"></a> </a><!-- vs code --> <a href="https://code.visualstudio.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Visual%20Studio%20Code&color=5C2D91&logo=Visual%20Studio%20Code&logoColor=5C2D91&labelColor=2F333A" alt="Suite CRM"></a> </a><!-- git --> <a href="https://git-scm.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Git&color=F05032&logo=Git&logoColor=F05032&labelColor=2F333A" alt="git distributed version control system"></a> <!-- github --> <a href="https://github.com" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GitHub&color=181717&logo=GitHub&logoColor=f2f2f2&labelColor=2F333A" alt="Github"></a>
- <!-- Style guidelines -->
-* Style :
-    * [PEP8](https://pep8.org/)
-
-
-## ``3-Installation``
-1.  Clone this GitHub repository to your local machine.
-
-`git clone https://github.com/MouadAbouOthmane/AirBnB_clone.git`
-
-2.  Navigate to the project directory.
-
-`cd AirBnB-Clone` 
-
-3.  Execute the console.
-
-`./console.py`
-
-### Execution 
-
-Interactive mode
-
+You need to install this software
 ```
-$ ./console.py
-(hbnb) help
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-
-(hbnb) 
-(hbnb) 
-(hbnb) quit
-$
-```
-Non Interactive mode
-```
-$ echo "help" | ./console.py
-(hbnb)
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-$
-$ cat test_help
-help
-$
-$ cat test_help | ./console.py
-(hbnb)
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-$
+1. VirtualBox - Virtual Machine
+2. Vagrant
+3. Emacs
+4. Vim/Vi
+5. VSCode
+6. Usage: ./console.py
 ```
 
-## ``4-Usage``
-
-* Start the console in interactive mode:
-
-```bash
-$ ./console.py
-(hbnb)
-```
-
-* Use help to see the available commands:
-
-```bash
-(hbnb) help
-
-Documented commands (type help <topic>):
-========================================
-EOF  all  create  destroy  help  quit  show
-
-(hbnb)
-```
-
-* Quit the console:
-
-```bash
-(hbnb) quit
-$
-```
-
-* create
-
-> *Creates a new instance of a given class. The class' ID is printed and the instance is saved to the file file.json.*
-
-```bash
-(hbnb) create BaseModel
-e8bdc20f-0680-4f46-87bc-035ee56f47c0
-$
-```
-
-* show 
-
-> *Deletes an instance of a given class with a given ID.*
-> *Update the file.json*
-
-```bash
-(hbnb) show BaseModel e8bdc20f-0680-4f46-87bc-035ee56f47c0
-[BaseModel] (e8bdc20f-0680-4f46-87bc-035ee56f47c0) {'id': 'e8bdc20f-0680-4f46-87bc-035ee56f47c0', 'created_at': datetime.datetime(2023, 10, 14, 11, 29, 1, 974822), 'updated_at': datetime.datetime(2023, 10, 14, 11, 29, 1, 974839)}
-(hbnb)
-(hbhb)
-```
-
-* all
-
-> *Prints all string representation of all instances of a given class.*
-> *If no class is passed, all classes are printed.*
-
-```bash
-(hbnb) all
-[BaseModel] (57262839-51d7-4a9a-93e2-35ed8e91d823) {'id': '57262839-51d7-4a9a-93e2-35ed8e91d823', 'created_at': datetime.datetime(2023, 8, 13, 14, 19, 19, 412265), 'updated_at': datetime.datetime(2023, 8, 13, 14, 19, 19, 412357)}
-(hbnb) all BaseModel
-[BaseModel] (57262839-51d7-4a9a-93e2-35ed8e91d823) {'id': '57262839-51d7-4a9a-93e2-35ed8e91d823', 'created_at': datetime.datetime(2023, 8, 13, 14, 19, 19, 412265), 'updated_at': datetime.datetime(2023, 8, 13, 14, 19, 19, 412357)}
-```
-* destroy
-
->*Deletes an instance of a given class with a given ID.*
->*Update the file.json*
-
-```bash
-(hbnb) destroy
-** class name missing **
-(hbnb) destroy BaseModel
-** instance id missing **
-(hbnb) destroy BaseModel e8bdc20f-0680-4f46-87bc-035ee56f47c0
-(hbnb) all
-[]
-```
-
-* count 
-
-> *Prints the number of instances of a given class.*
-
-```bash
-(hbnb) create User
-ce5f7ac5-4b2e-4c90-933d-6c78e69ab1c7
-(hbnb) create User
-dd697519-4ac9-42e0-80e2-fa7b3ac61193
-(hbnb) create User
-52c4036b-f018-49d0-8d93-d7a2d56bcdad
-(hbnb) count User
-3
-```
-
-## ``5-Testing``
-
-* unittest module
-* File extension ``` .py ```
-* Files and folders star with ```test_```
-* Organization:for ```models/base.py```, unit tests in: ```tests/test_models/test_base.py```
-* Execution command: ```python3 -m unittest discover tests```
-* or: ```python3 -m unittest tests/test_models/test_base.py```
-
-### run TEST interactive mode
-
-```bash
-echo "python3 -m unittest discover tests" | bash
-```
-
-### run TEST non-interactive mode
-
-To run the tests in non-interactive mode, and discover all the test, you can use the command:
-
-```bash
-python3 -m unittest discover tests
-```
-
-## ``6-Authors``
-
--   [SIMOHAMMED22](https://github.com/SIMOHAMMED22)
--   [Mouad Abou Othmane](https://github.com/MouadAbouOthmane)
+## Authors
+* LOUZANI Zineddine
+* Fatima Zohra
