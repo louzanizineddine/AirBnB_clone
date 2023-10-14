@@ -1,31 +1,30 @@
 #!/usr/bin/python3
-""" Unit tests for review.py file"""
+""" Unit tests for state.py file"""
 
+# import unittest
+# from models.base_model import BaseModel
+# import os
+# from models import storage
+# from models.engine.file_storage import FileStorage
+# from models.state import State
+# import pycodestyle
 
-import unittest
-from models.base_model import BaseModel
-import os
-from models import storage
-from models.engine.file_storage import FileStorage
-from models.review import Review
-import pycodestyle
-
-class TestReview(unittest.TestCase):
-    """ Unit tests for review.py file"""
-        
-    def setUp(self):
-        """Sets up test methods."""
-        pass
+# class TestState(unittest.TestCase):
+#     """ Unit tests for state.py file"""
+    
+    # def setUp(self):
+    #     """Sets up test methods."""
+    #     pass
 
 #     def tearDown(self):
 #         """Tears down test methods."""
 #         self.resetStorage()
 #         pass
 
-#     def test_review(self):
-#         """ Unit tests for review.py file"""
+#     def test_state(self):
+#         """Test if the inheritance works"""
 
-#         self.assertTrue(issubclass(Review, BaseModel))
+#         self.assertTrue(issubclass(State, BaseModel))
 
 #     def resetStorage(self):
 #         """Resets FileStorage data."""
@@ -34,12 +33,14 @@ class TestReview(unittest.TestCase):
 #             os.remove(FileStorage._FileStorage__file_path)
 
 #     def test_instantiation(self):
-#         """Tests instantiation of Review class."""
+#         """Tests instantiation of State class."""
 
-#         b = Review()
-#         self.assertEqual(str(type(b)), "<class 'models.review.Review'>")
-#         self.assertIsInstance(b, Review)
+#         b = State()
+#         self.assertEqual(str(type(b)), "<class 'models.state.State'>")
+#         self.assertIsInstance(b, State)
 #         self.assertTrue(issubclass(type(b), BaseModel))
+
+
 
 # class TestPycodestyle(unittest.TestCase):
 #     """
@@ -49,7 +50,7 @@ class TestReview(unittest.TestCase):
 #         """Testing
 #         pycodestyle"""
 #         style = pycodestyle.StyleGuide(quit=True)
-#         result = style.check_files(['models/review.py'])
+#         result = style.check_files(['models/state.py'])
 #         self.assertEqual(result.total_errors, 0,
 #                          "Found code style errors (and warnings).")
 
@@ -63,43 +64,44 @@ class TestReview(unittest.TestCase):
 #         """
 #         Test if module documentation exists
 #         """
-#         boolVal = len(Review.__module__.__doc__) > 1
+#         boolVal = len(State.__module__.__doc__) > 1
 #         self.assertTrue(boolVal)
 
 #     def test_class_doc(self):
 #         """
 #         Test if module documentation exists
 #         """
-#         boolVal = len(Review.__doc__) > 1
+#         boolVal = len(State.__doc__) > 1
 #         self.assertTrue(boolVal)
 
 #     def test_init_doc(self):
 #         """
 #         Test if module documentation exists
 #         """
-#         boolVal = len(Review.__init__.__doc__) > 1
+#         boolVal = len(State.__init__.__doc__) > 1
 #         self.assertTrue(boolVal)
 
 #     def test_str_doc(self):
 #         """
 #         Test if module documentation exists
 #         """
-#         boolVal = len(Review.__str__.__doc__) > 1
+#         boolVal = len(State.__str__.__doc__) > 1
 #         self.assertTrue(boolVal)
 
 #     def test_save_doc(self):
 #         """
 #         Test if module documentation exists
 #         """
-#         boolVal = len(Review.save.__doc__) > 1
+#         boolVal = len(State.save.__doc__) > 1
 #         self.assertTrue(boolVal)
 
 #     def test_to_dict_doc(self):
 #         """
 #         Test if module documentation exists
 #         """
-#         boolVal = len(Review.to_dict.__doc__) > 1
+#         boolVal = len(State.to_dict.__doc__) > 1
 #         self.assertTrue(boolVal)
 
-if __name__ == "__main__":
-    unittest.main()
+
+# if __name__ == "__main__":
+#     unittest.main()
