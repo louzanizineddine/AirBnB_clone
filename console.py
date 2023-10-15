@@ -120,7 +120,7 @@ class HBNBCommand(cmd.Cmd):
             key = f"{args[0]}.{args[1]}"
             instances = storage.all()
             if key in instances:
-                del (instances[key])
+                del instances[key]
                 storage.save()
             else:
                 print("** no instance found **")
