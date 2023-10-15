@@ -1,4 +1,3 @@
-'''
 #!/usr/bin/python3
 """ Class FileStorage that serializes instances to a JSON file
 and deserializes JSON file to instances """
@@ -63,11 +62,11 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        '''returns dic of __objects'''
+        """returns dic of __objects"""
         return FileStorage.__objects
 
     def new(self, obj):
-        '''sets in __objects the obj with key <obj class name>.id'''
+        """sets in __objects the obj with key <obj class name>.id"""
         key = f"{type(obj).__name__}.{obj.id}"
         FileStorage.__objects[key] = obj
 
@@ -76,7 +75,7 @@ class FileStorage:
 
         serialized_objects = {}
 
-        ''' Iterate through the objects in FileStorage.__objects'''
+        """Iterate through the objects in FileStorage.__objects"""
         for key, obj in FileStorage.__objects.items():
             serialized_objects[key] = obj.to_dict()
 
@@ -173,3 +172,4 @@ class FileStorage:
                                 dic[k].name = v["name"]
 
                 FileStorage.__objects = dic
+'''
