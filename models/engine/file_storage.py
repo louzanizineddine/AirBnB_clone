@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Module for FileStorage class."""
 import json
-from tkinter import W
 
 
 class FileStorage:
