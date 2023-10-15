@@ -54,7 +54,6 @@ class FileStorage:
 #!/usr/bin/python3
 """Module for FileStorage class."""
 import json
-import os
 
 
 class FileStorage:
@@ -65,12 +64,12 @@ class FileStorage:
 
     def all(self):
         """returns dic of __objects"""
-        return FileStorage.__objects
+        return self.__objects
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
         key = f"{type(obj).__name__}.{obj.id}"
-        FileStorage.__objects[key] = obj
+        self.__objects[key] = obj
 
     def save(self):
         """Class for serializtion and deserialization of base classes."""
@@ -78,10 +77,10 @@ class FileStorage:
         serialized_objects = {}
 
         """Iterate through the objects in FileStorage.__objects"""
-        for key, obj in FileStorage.__objects.items():
+        for key, obj in self.__objects.items():
             serialized_objects[key] = obj.to_dict()
 
-            with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
+            with open(self.__file_path, "w", encoding="utf-8") as f:
                 json.dump(serialized_objects, f)
     def reload(self):
         """deserializes the JSON file to __objects"""
