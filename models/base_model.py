@@ -27,13 +27,13 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             storage.new(self)
-    
+
     def __str__(self):
         """Returns a human-readable string representation
          of an instance."""
 
         return "[{}] ({}) {}".format(self.__class__.__name__,
-                                      self.id, self.__dict__)
+                                     self.id, self.__dict__)
 
     def save(self):
         """Updates the updated_at attribute
