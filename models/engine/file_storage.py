@@ -1,3 +1,4 @@
+'''
 #!/usr/bin/python3
 """ Class FileStorage that serializes instances to a JSON file
 and deserializes JSON file to instances """
@@ -49,6 +50,7 @@ class FileStorage:
         except FileNotFoundError:
             ...
 '''
+
 #!/usr/bin/python3
 """Module for FileStorage class."""
 import json
@@ -81,7 +83,28 @@ class FileStorage:
 
             with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
                 json.dump(serialized_objects, f)
+    def reload(self):
+        """deserializes the JSON file to __objects"""
+        from models.base_model import BaseModel
+        from models.user import User
+        from models.state import State
+        from models.city import City
+        from models.amenity import Amenity
+        from models.place import Place
+        from models.review import Review
 
+        cls = {'BaseModel': BaseModel, "User": User, "Place": Place,
+               "Amenity": Amenity, "City": City,
+               "Review": Review, "State": State}
+        try:
+            with open(self.__file_path, 'r', encoding="utf-8") as file:
+                objs = json.loads(file.read())
+                for key in objs:
+                    name = objs[key]['__class__']
+                    self.__objects[key] = cls[name](**objs[key])
+        except FileNotFoundError:
+            ...
+'''
     def reload(self):
         """Deserializes JSON file into __objects."""
 
