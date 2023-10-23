@@ -1,28 +1,29 @@
-.filters{
-  height: 70px;
-  width: 100%;
-  border: 1px solid #DDDDDD;
-  border-radius: 4px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
+.filters {
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 .filters .locations,
-.filters .amenities
-{
-  height: 100%;
-  width: 25%;
-  border-right: 1px solid #DDDDDD;
+.filters .amenities {
+    height: 100%;
+    width: 25%;
+    border-right: 1px solid #DDDDDD;
 }
-.title{
+
+.title {
     font-weight: 600;
     color: black;
     margin-top: 20px;
     margin-bottom: 0px;
     margin-left: 30px;
 }
-.subtitle{
+
+.subtitle {
     font-size: 14px;
     font-weight: 400;
     color: black;
@@ -40,34 +41,35 @@
     padding: 10px;
 }
 
-.state_name{
+.state_name {
     font-size: 16px;
 }
 
-li{
+li {
     list-style-type: none;
 }
-.locations:hover .popover{
-    display:block;
-}
-.amenities:hover .popover{
-    display:block;
-}
-/* I think it should .filters button not mess up every button */
-button
-{
-  font-size: 18px;
-  background-color:  #FF5A5F;
-  color: white;
-  height: 48px;
-  width: 20%;
-  border: 0;
-  border-radius: 4px;
-  margin-right: 30px;
-  margin-left: auto;
+
+.locations:hover .popover {
+    display: block;
 }
 
-button:hover{
+.amenities:hover .popover {
+    display: block;
+}
+
+/* I think it should .filters button not mess up every button */
+button {
+    font-size: 18px;
+    background-color: #FF5A5F;
+    color: white;
+    height: 48px;
+    width: 20%;
+    border: 0;
+    border-radius: 4px;
+    margin-right: 30px;
+    margin-left: auto;
+}
+
+button:hover {
     opacity: 0.9;
 }
-

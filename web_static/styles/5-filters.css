@@ -1,4 +1,4 @@
-.filters{
+.filters {
   height: 70px;
   width: 100%;
   border: 1px solid #DDDDDD;
@@ -9,33 +9,33 @@
 }
 
 .filters .locations,
-.filters .amenities
-{
+.filters .amenities {
   height: 100%;
   width: 25%;
   border-right: 1px solid #DDDDDD;
 }
-.title{
-    font-weight: 600;
-    color: black;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    margin-left: 30px;
+
+.title {
+  font-weight: 600;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  margin-left: 30px;
 }
-.subtitle{
-    font-size: 14px;
-    font-weight: 400;
-    color: black;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 30px;
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 30px;
 }
 
 /* I think it should .filters button not mess up every button */
-button
-{
+button {
   font-size: 18px;
-  background-color:  #FF5A5F;
+  background-color: #FF5A5F;
   color: white;
   height: 48px;
   width: 20%;
@@ -45,7 +45,6 @@ button
   margin-left: auto;
 }
 
-button:hover{
-    opacity: 0.9;
+button:hover {
+  opacity: 0.9;
 }
-
