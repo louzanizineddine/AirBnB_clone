@@ -2,7 +2,14 @@
   font-size: 30px;
 } 
 
+.places .articles{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .places article {
+  flex-basis: 40%;
   width: 390px;
   padding: 20px;
   margin: 20px;
